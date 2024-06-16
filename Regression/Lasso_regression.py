@@ -58,7 +58,7 @@ class Lasso_Regression:
     
     def fit(self,X,Y):
         
-        self.Xtrain  = X.to_numpy()
+        self.Xtrain  = X
         self.Ytrain = Y.to_numpy()
         
         self.n_datapoints, self.n_features = self.Xtrain.shape
@@ -78,8 +78,6 @@ class Lasso_Regression:
             self.weights -= self.learning_rate*dw         
             #Updating the new bias
             self.bias -= self.learning_rate*db
-            
-            print(f"weights {self.weights} and bias {self.bias}")
             
         print(f"The Function is fit with the weights {self.weights} and bias {self.bias} with iterations of {self.maxiters}")   
         
