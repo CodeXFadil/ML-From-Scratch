@@ -47,9 +47,9 @@ class Lasso_Regression:
         for i in range(self.n_features):
                         
             if weights[i]>0:
-                dw[i] = (2/n_datapoints)*(np.dot(Xtrain[:,i].T,(ypred - Ytrain) - self.lasso_pen))
+                dw[i] = (2/n_datapoints)*(np.dot(Xtrain[:,i].T,(ypred - Ytrain)) - self.lasso_pen)
             else:
-                dw[i] = (2/n_datapoints)*(np.dot(Xtrain[:,i].T,(ypred - Ytrain) + self.lasso_pen))
+                dw[i] = (2/n_datapoints)*(np.dot(Xtrain[:,i].T,(ypred - Ytrain)) + self.lasso_pen)
         
         # Bias
         db = (2/n_datapoints)*np.sum(ypred - Ytrain)
