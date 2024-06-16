@@ -4,12 +4,17 @@ import numpy as np
 
 # Define th Inputs
 
-print("This py file contains alog for Lasso regression")
+print("This python file contains algorithem for Lasso regression")
 
 class Lasso_Regression:
-    
     def __init__(self,lr,maxiters,lasso_pen):
-        
+        """Initialize the Lasso Regression Model
+
+        Args:
+            lr (_type_): learninig Rate
+            maxiters (_type_): Max Count of iterations
+            lasso_pen (_type_): L1 Reglularization Penalty
+        """
         print("Initailizing the Lasso Regression Class")
         
         self.learning_rate = lr
@@ -19,9 +24,21 @@ class Lasso_Regression:
     
     def Lasso_Regression_CF(self,Xtrain,Ytrain,weights,bias,n_datapoints,lasso_pen):  
         
+        """Computes the Weights and Bias Gradients for the Lasso REgression Cost functions 
+
+        Args:
+            Xtrain (_type_): Training Data Features
+            Ytrain (_type_): Traininig Data Target
+            weights (_type_): Regression weights
+            bias (_type_): Regression Bias
+            n_datapoints (_type_): No of datapoints
+            lasso_pen (_type_): L1 Regulaization Penalty
+
+        Returns:
+            _type_: Gradients of Lasso regression cost functions
+        """    
+        
         ypred = self.predict(self.Xtrain)
-        print(ypred)
-        print(ypred - Ytrain)
         
         # Estimating the Gradients for Weights and Bias 
         # Weights
